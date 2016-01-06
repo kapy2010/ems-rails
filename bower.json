@@ -1,0 +1,25 @@
+{
+  "name": "ems",
+  "authors": [
+    "Kapil Singh <singh.kapy@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "angular-animate": "~1.4.8",
+    "animate.css": "~3.5.1"
+  }
+}
