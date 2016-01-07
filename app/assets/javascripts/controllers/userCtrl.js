@@ -43,22 +43,23 @@ angular.module('userCtrl', ['userService'])
 		vm.userData.phone = vm.userData.phone.replace(/[^0-9]/i, '');
 	};
 
-	vm.saveUser = function() {
-		vm.processing = true;
-		vm.flash = '';
-		vm.alert = '';
+	vm.saveUser = function(isVaild) {
+		if (isVaild) {
+			vm.processing = true;
+			vm.success = '';
+			vm.alert = '';
 
-		User.create(vm.userData)
-			.success(function(data) {
-				vm.processing = false;
-				vm.userData = {};
-				if (data.status === "no_content") {
-					vm.alert = data.error[0];
-				} else {
-					vm.flash = 'Employee created successfully!';
-				}
-			});
-
+			User.create(vm.userData)
+				.success(function(data) {
+					vm.processing = false;
+					vm.userData = {};
+					if (data.status === "false") {
+						vm.alert = data.error[0];
+					} else {
+						vm.success = 'Employee created successfully!';
+					}
+				});
+			}
 	};
 
 })
@@ -80,22 +81,23 @@ angular.module('userCtrl', ['userService'])
 			vm.userData = data;
 		});
 
-	vm.saveUser = function() {
-		vm.processing = true;
-		vm.flash = '';
-		vm.alert = '';
+	vm.saveUser = function(isVaild) {
+		if (isVaild) {
+			vm.processing = true;
+			vm.success = '';
+			vm.alert = '';
 
-		User.update($routeParams.user_id, vm.userData)
-			.success(function(data) {
-				vm.processing = false;
+			User.update($routeParams.user_id, vm.userData)
+				.success(function(data) {
+					vm.processing = false;
 
-				if (data.status === "no_content") {
-					vm.alert = data.error[0];
-				} else {
-					vm.userData = {};
-					vm.flash = 'Employee updated successfully!';
-				}
-			});
+					if (data.status === "false") {
+						vm.alert = data.error[0];
+					} else {
+						vm.success = 'Employee updated successfully!';
+					}
+				});
+		}
 	};
 
 });

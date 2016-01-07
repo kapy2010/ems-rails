@@ -3,12 +3,12 @@
 	<h1 ng-if="user.type == 'edit'">Edit Employee</h1>
 </div>
 
-<form name="userForm" class="form-horizontal" ng-submit="user.saveUser()">
+<form name="userForm" class="form-horizontal" ng-submit="user.saveUser(userForm.$valid)" novalidate>
 
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Email</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" ng-model="user.userData.email">
+			<input type="email" name="email" class="form-control" ng-model="user.userData.email">
 		</div>
 	</div>
 
@@ -29,7 +29,7 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Phone</label>
 		<div class="col-sm-6">
-			<input type="text" ng-change="user.clean()" class="form-control" ng-model="user.userData.phone">
+			<input type="text" name="phone" ng-change="user.clean()" class="form-control" ng-model="user.userData.phone" ng-minLength="10" ng-maxLength="10">
 		</div>
 	</div>
 
@@ -52,12 +52,14 @@
 <div class="row show-hide-message">
 	<div class="col-sm-6 col-sm-offset-2">
 
-		<div class="alert alert-success" ng-show="user.flash">
-			{{ user.flash }}
+		<div class="alert alert-success" ng-show="user.success">
+			{{ user.success }}
 		</div>
 
-		<div class="alert alert-danger" ng-show="user.alert">
+		<div class="alert alert-danger" ng-show="user.alert || userForm.$invalid && userForm.$submitted">
 			{{ user.alert }}
+			<div ng-show="userForm.email.$invalid">Enter a valid email.</div>
+			<div ng-show="userForm.phone.$invalid">Enter 10 digit phone number.</div>
 		</div>
 
 	</div>
