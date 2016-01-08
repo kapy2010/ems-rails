@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Ems</title>
   <base href="/">
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application' %>
+      <%= csrf_meta_tags %>
 </head>
+
 <body ng-app="userApp">
   <header>
-  	<div class="navbar navbar-inverse">
-  	<div class="container">
-  		<div class="navbar-header">
-  			<a href="/" class="navbar-brand"><span class="glyphicon glyphicon-fire text-danger"></span> Employee Management System</a>
-  		</div>
-  		<ul class="nav navbar-nav">
-  			<li><a href="/users"><span class="glyphicon glyphicon-user"></span> Employees</a></li>
-  		</ul>
-  	</div>
-  	</div>
+    <div class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">
+            <span class="glyphicon glyphicon-fire text-danger"></span> Employee Management System</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/users">
+              <span class="glyphicon glyphicon-user"></span> Employees</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </header>
   <main class="container">
-	   <div ng-view></div>
-</main>
+    <div ng-view></div>
+  </main>
 </body>
+
 </html>
