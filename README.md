@@ -1,28 +1,15 @@
-== README
+## Employee Management System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To run this app follow the steps below:
 
-Things you may want to cover:
+* Install gems:<br>
+`bundle install`
 
-* Ruby version
+* Database creation:<br>
+`rake db:migrate`
 
-* System dependencies
+* Install front end dependencies:<br>
+`bower install`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Run the application:<br>
+`rails s`
