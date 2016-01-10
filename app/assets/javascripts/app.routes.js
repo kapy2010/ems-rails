@@ -1,6 +1,6 @@
 angular.module('app.routes', ['ngRoute'])
 
-.config(function($routeProvider, $locationProvider) {
+.config(function($routeProvider) {
 
 	$routeProvider
 
@@ -30,7 +30,5 @@ angular.module('app.routes', ['ngRoute'])
 			controller: 'userEditController',
 			controllerAs: 'user'
 		});
-
-	$locationProvider.html5Mode(true);
 
 });

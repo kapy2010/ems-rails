@@ -1,7 +1,7 @@
 <div class="page-header">
 	<h1>
 		Employees
-		<a href="/users/create" class="btn btn-default">
+		<a href="#/users/create" class="btn btn-default">
 			<span class="glyphicon glyphicon-plus"></span>
 			New Employee
 		</a>
@@ -47,7 +47,7 @@
 				<span class="glyphicon glyphicon-remove"></span>
 			</td>
 			<td class="col-sm-2">
-				<a ng-href="/users/{{ person.id }}" class="btn btn-danger">Edit</a>
+				<a ng-href="#/users/{{ person.id }}" class="btn btn-danger">Edit</a>
 				<a href="#" ng-click="user.deleteUser(person.id)" class="btn btn-primary">Delete</a>
 			</td>
 		</tr>

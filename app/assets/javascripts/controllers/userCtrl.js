@@ -37,9 +37,13 @@ angular.module('userCtrl', ['userService'])
 
 	vm.type = 'create';
 
-	vm.clean = function() {
+	vm.cleanFname = function() {
 		vm.userData.firstname = vm.userData.firstname.replace(/[^a-z]/i, '');
+	};
+	vm.cleanLname = function() {
 		vm.userData.lastname = vm.userData.lastname.replace(/[^a-z]/i, '');
+	};
+	vm.cleanPhone = function() {
 		vm.userData.phone = vm.userData.phone.replace(/[^0-9]/i, '');
 	};
 
@@ -70,9 +74,13 @@ angular.module('userCtrl', ['userService'])
 
 	vm.type = 'edit';
 
-	vm.clean = function() {
+	vm.cleanFname = function() {
 		vm.userData.firstname = vm.userData.firstname.replace(/[^a-z]/i, '');
+	};
+	vm.cleanLname = function() {
 		vm.userData.lastname = vm.userData.lastname.replace(/[^a-z]/i, '');
+	};
+	vm.cleanPhone = function() {
 		vm.userData.phone = vm.userData.phone.replace(/[^0-9]/i, '');
 	};
 
