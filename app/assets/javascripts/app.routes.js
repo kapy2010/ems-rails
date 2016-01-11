@@ -1,6 +1,6 @@
 angular.module('app.routes', ['ngRoute'])
 
-.config(function($routeProvider) {
+.config(['$routeProvider', function($routeProvider) {
 
 	$routeProvider
 
@@ -31,4 +31,4 @@ angular.module('app.routes', ['ngRoute'])
 			controllerAs: 'user'
 		});
 
-});
+}]);
